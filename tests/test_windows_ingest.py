@@ -270,18 +270,18 @@ class WindowsIngestTests(unittest.TestCase):
             self.assertNotIn("failed_tool_call",{e["event_type"] for e in parse_rollout(p,h)["events"]})
 
     def test_forward_slash_user_paths_are_redacted(self):
-        signature=_command_signature("Get-Content C:/Users/click/private.txt /Users/click/notes.txt")
-        self.assertNotIn("click",signature)
+        signature=_command_signature("Get-Content C:/Users/example/private.txt /Users/example/notes.txt")
+        self.assertNotIn("example",signature)
         self.assertNotIn("private.txt",signature)
 
     def test_report_redacts_user_home_paths_and_has_stable_project_root(self):
         with tempfile.TemporaryDirectory() as d:
             base=Path(d);h=base/".codex";p=h/"sessions"/"rollout-a.jsonl"
-            write_jsonl(p,[{"type":"session_meta","payload":{"id":"t","cwd":"C:/Users/click/project"}}])
+            write_jsonl(p,[{"type":"session_meta","payload":{"id":"t","cwd":"C:/Users/example/project"}}])
             run_audit(h,h,base/"out",project_root=base/"project")
             text="".join(x.read_text(encoding="utf-8",errors="ignore") for x in (base/"out").rglob("*") if x.is_file())
-            self.assertNotIn("C:/Users/click",text)
-            self.assertNotIn("C:\\Users\\click",text)
+            self.assertNotIn("C:/Users/example",text)
+            self.assertNotIn("C:\\Users\\example",text)
             self.assertIn("$CODEX_HOME",text)
 
 if __name__=="__main__":unittest.main()

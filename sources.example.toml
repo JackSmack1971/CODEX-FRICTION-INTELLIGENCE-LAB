@@ -1,0 +1,6 @@
+# Example only. This file never grants authorization by itself.
+# [sources.export]
+# path = 'C:/approved/export.jsonl'
+# type = 'execution_trace'
+# repo = 'example-project'
+# Reading still requires the exact CLI --authorize path.

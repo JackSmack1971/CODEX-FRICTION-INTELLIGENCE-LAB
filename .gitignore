@@ -1,0 +1,5 @@
+__pycache__/
+
+# Live Codex-history reports can contain cross-project labels and command details.
+/findings/
+/output/

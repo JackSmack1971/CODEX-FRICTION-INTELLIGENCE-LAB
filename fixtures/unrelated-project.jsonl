@@ -1,0 +1,1 @@
+{"type":"tool_call","session_id":"s13","task_id":"t13","payload":{"tool_name":"shell","command":"vendor-cli --unsupported-option","status":"unknown option --unsupported-option"}}

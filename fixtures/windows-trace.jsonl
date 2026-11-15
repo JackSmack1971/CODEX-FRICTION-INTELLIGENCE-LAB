@@ -1,0 +1,9 @@
+{"type":"tool_call","session_id":"s1","task_id":"t1","timestamp":"2026-10-01T12:00:00Z","payload":{"tool_name":"shell","command":"codex --unsupported-option","status":"unknown option --unsupported-option"}}
+{"type":"tool_call","session_id":"s1","task_id":"t1","timestamp":"2026-10-01T12:01:00Z","payload":{"tool_name":"shell","command":"codex --unsupported-option","status":"unknown option --unsupported-option"}}
+{"type":"tool_call","session_id":"s2","task_id":"t2","payload":{"tool_name":"shell","command":"grep -R TODO .","status":"'grep' is not recognized as an internal or external command"}}
+{"type":"tool_call","session_id":"s3","task_id":"t3","payload":{"tool_name":"shell","command":"python -c import missing_package","status":"ModuleNotFoundError: No module named 'missing_package'","text":"api_key=sk-abcdefghijklmnopqrstuvwxyz123456"}}
+{"type":"tool_call","session_id":"s4","task_id":"t4","payload":{"tool_name":"shell","command":"pytest","status":"test failed; retry again after fix"}}
+{"type":"tool_call","session_id":"s5","task_id":"t5","payload":{"tool_name":"shell","command":"pytest","status":"test failed"}}
+{"type":"user","session_id":"s6","task_id":"t6","payload":{"text":"Correction: do not expand scope to docs/legacy"}}
+{"type":"tool_call","session_id":"s7","task_id":"t7","payload":{"tool_name":"shell","command":"unrelated", "status":"ERROR similar"}}
+{malformed fixture record

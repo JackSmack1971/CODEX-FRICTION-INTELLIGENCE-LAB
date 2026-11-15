@@ -1,0 +1,6 @@
+{"type":"tool_call","session_id":"s8","task_id":"t8","payload":{"tool_name":"shell","command":"python -m pip show package-that-isnt-installed","status":"Package not found"}}
+{"type":"summary","session_id":"s3","task_id":"t3","payload":{"text":"ModuleNotFoundError: No module named 'missing_package'"}}
+{"type":"tool_call","session_id":"s9","task_id":"t9","payload":{"tool_name":"shell","command":"npm test","status":"test failed; retry again after fix"}}
+{"type":"tool_call","session_id":"s10","task_id":"t10","payload":{"tool_name":"shell","command":"codex --unsupported-option","status":"unrecognized arguments: --unsupported-option"}}
+{"type":"tool_call","session_id":"s11","task_id":"t11","payload":{"tool_name":"shell","command":"git status","status":"fatal: not a git repository"}}
+{"type":"tool_call","session_id":"s12","task_id":"t12","payload":{"tool_name":"shell","command":"git diff","status":"out of scope change detected"}}
